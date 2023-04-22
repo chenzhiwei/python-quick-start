@@ -10,6 +10,7 @@ code-format = "black ."
 main = "./main.py"
 
 [packages]
+requests = "*"
 
 [dev-packages]
 pycodestyle = "*"

@@ -1,0 +1,29 @@
+[project]
+name = "python-quick-start"
+description = "Python Quick Start"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Some Name", email = "name@example.com" },
+]
+dependencies = [
+    "request",
+]
+
+[project.urls]
+Repository = "https://github.com/chenzhiwei/python-quick-start"
+
+[project.optional-dependencies]
+dev = [
+  "ruff",
+]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.isort]
+known-third-party = ["python-quick-start", "pydantic", "starlette"]
+
+[tool.ruff.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true

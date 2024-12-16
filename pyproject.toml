@@ -1,14 +1,17 @@
 [project]
-name = "python-quick-start"
-description = "Python Quick Start"
+name = "taishan"
+version = "0.1.0"
 requires-python = ">=3.10"
-license = "MIT"
-authors = [
-    { name = "Some Name", email = "name@example.com" },
-]
 dependencies = [
-    "request",
+    "fastapi",
+    "requests",
 ]
+
+authors = [
+  {name = "Some Name", email = "name@example.com"},
+]
+license = {file = "LICENSE"}
+description = "Taishan to proxy APIs of Taishan service"
 
 [project.urls]
 Repository = "https://github.com/chenzhiwei/python-quick-start"
@@ -18,12 +21,24 @@ dev = [
   "ruff",
 ]
 
+[project.scripts]
+taishan-cli = "taishan.cli:run"
+
 [tool.ruff]
-line-length = 110
+line-length = 120
 
 [tool.ruff.isort]
-known-third-party = ["python-quick-start", "pydantic", "starlette"]
+known-third-party = ["taishan", "pydantic", "starlette"]
 
 [tool.ruff.pyupgrade]
 # Preserve types, even if a file imports `from __future__ import annotations`.
 keep-runtime-typing = true
+
+[tool.distutils.egg_info]
+egg_base = "build"
+
+[tool.uv]
+index-url = "https://mirrors.huaweicloud.com/repository/pypi/simple"
+
+[tool.uv.pip]
+index-url = "https://mirrors.huaweicloud.com/repository/pypi/simple"

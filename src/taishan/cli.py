@@ -11,7 +11,7 @@ def get_content(url):
     return None
 
 
-def main():
+def run():
     if len(sys.argv) > 1:
         url = sys.argv[1]
     else:
@@ -23,7 +23,3 @@ def main():
         print(content)
     else:
         print("Hello world!")
-
-
-if __name__ == "__main__":
-    main()

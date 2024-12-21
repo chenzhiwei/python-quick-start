@@ -2,16 +2,17 @@
 name = "taishan"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = [
-    "fastapi",
-    "requests",
-]
+license = {file = "LICENSE"}
+description = "Taishan to proxy APIs of Taishan service"
 
 authors = [
   {name = "Some Name", email = "name@example.com"},
 ]
-license = {file = "LICENSE"}
-description = "Taishan to proxy APIs of Taishan service"
+
+dependencies = [
+    "fastapi",
+    "requests",
+]
 
 [project.urls]
 Repository = "https://github.com/chenzhiwei/python-quick-start"
@@ -37,8 +38,13 @@ keep-runtime-typing = true
 [tool.distutils.egg_info]
 egg_base = "build"
 
-[tool.uv]
-index-url = "https://mirrors.huaweicloud.com/repository/pypi/simple"
+[[tool.uv.index]]
+url = "https://mirrors.huaweicloud.com/repository/pypi/simple"
+default = true
 
 [tool.uv.pip]
 index-url = "https://mirrors.huaweicloud.com/repository/pypi/simple"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"

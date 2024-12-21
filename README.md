@@ -2,5 +2,10 @@
 
 A project for quickly setup python.
 
-## Structure
+## Quick Start
+
+```
+uv lock
+uv sync
+```
 

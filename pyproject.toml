@@ -1,7 +1,7 @@
 [project]
 name = "taishan"
 version = "0.1.0"
-requires-python = ">=3.10"
+requires-python = ">3.10"
 license = {file = "LICENSE"}
 description = "Taishan to proxy APIs of Taishan service"
 
@@ -10,8 +10,8 @@ authors = [
 ]
 
 dependencies = [
-    "fastapi",
-    "requests",
+  "fastapi",
+  "requests",
 ]
 
 [project.urls]
@@ -28,15 +28,16 @@ taishan-cli = "taishan.cli:run"
 [tool.ruff]
 line-length = 120
 
-[tool.ruff.isort]
-known-third-party = ["taishan", "pydantic", "starlette"]
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
 
-[tool.ruff.pyupgrade]
-# Preserve types, even if a file imports `from __future__ import annotations`.
-keep-runtime-typing = true
+[tool.ruff.lint.isort]
+case-sensitive = false
+force-sort-within-sections = false # `import xx` before `from xx import zz`
 
 [tool.distutils.egg_info]
-egg_base = "build"
+egg_base = "build" # create egg_info files inside build dir
 
 [[tool.uv.index]]
 url = "https://mirrors.huaweicloud.com/repository/pypi/simple"

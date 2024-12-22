@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
 import sys
+
 import requests
+
+from taishan import const
 
 
 def get_content(url):
@@ -15,7 +18,7 @@ def run():
     if len(sys.argv) > 1:
         url = sys.argv[1]
     else:
-        url = "http://baidu.com"
+        url = const.DEFAULT_URL
 
     content = get_content(url)
 

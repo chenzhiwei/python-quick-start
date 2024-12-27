@@ -15,6 +15,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
 )
+# remove following to disable auth
 app.add_middleware(
     AuthenticationMiddleware,
     AuthBackend(),

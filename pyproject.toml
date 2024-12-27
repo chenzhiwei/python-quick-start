@@ -10,8 +10,9 @@ authors = [
 ]
 
 dependencies = [
-  "fastapi",
-  "requests",
+  "fastapi>=0.115.6",
+  "requests>=2.32.3",
+  "uvicorn>=0.34.0",
 ]
 
 [project.urls]
@@ -19,11 +20,11 @@ Repository = "https://github.com/chenzhiwei/python-quick-start"
 
 [project.optional-dependencies]
 dev = [
-  "ruff",
 ]
 
 [project.scripts]
 taishan-cli = "taishan.cli:run"
+taishan-server = "taishan.server:run"
 
 [tool.ruff]
 line-length = 120

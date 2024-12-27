@@ -6,11 +6,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.authentication import AuthenticationMiddleware
+
+from taishan.auth import AuthBackend
 
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+)
+app.add_middleware(
+    AuthenticationMiddleware,
+    AuthBackend(),
 )
 
 

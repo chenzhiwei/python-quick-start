@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12-slim AS builder
+FROM docker.io/library/python:3-slim AS builder
 
 COPY src /app/src
 COPY uv.lock /app/uv.lock
@@ -10,7 +10,7 @@ WORKDIR /app
 RUN uv sync --frozen --no-cache
 RUN rm -rf /app/.pdm-build
 
-FROM docker.io/library/python:3.12-slim
+FROM docker.io/library/python:3-slim
 
 LABEL org.opencontainers.image.authors="zhiwei@youya.org"
 LABEL org.opencontainers.image.documentation="https://github.com/chenzhiwei/python-quick-start"
